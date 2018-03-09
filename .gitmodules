@@ -1,0 +1,3 @@
+[submodule "external/dotfiles"]
+	path = external/dotfiles
+	url = ssh://git@github.com/sebdah/dotfiles
