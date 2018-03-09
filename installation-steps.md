@@ -11,7 +11,7 @@ Steps for Arch Linux installation for Thinkpad X270
 
 2. Post-install
 
-	
+
 	* Installed `i3-gaps` from AUR
 		* Configuration is in `.config/i3/config`
 	* Generated SSH keys with ED25519 elliptic-curve protocol
@@ -20,3 +20,7 @@ Steps for Arch Linux installation for Thinkpad X270
 		```
 	* Added `udev` rule for Trackpoint
 		* Reference found [here](https://wiki.archlinux.org/index.php/TrackPoint)
+    * `neovim` config require Python library `neovim`
+        ```bash
+        # pip install neovim
+        ```
