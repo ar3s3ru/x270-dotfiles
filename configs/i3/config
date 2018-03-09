@@ -182,12 +182,13 @@ bindsym $Mod+Shift+9 move container to workspace $Workspace9
 bindsym $Mod+Shift+0 move container to workspace $Workspace10
 
 # Assigning application to workspaces
-#assign [class="Termite"]		$Workspace1
-#assign [class="(?i)firefox"]		$Workspace2
-assign 	[class="(?i)chromium"]		$Workspace2
-#assign [class="jetbrains*"]  		$Workspace3
-#assign [class="^jetbrains-studio$"] 	$Workspace4
-assign [class="Telegram"]           	$Workspace5
+#assign [class="Termite"]             $Workspace1
+#assign [class="(?i)firefox"]         $Workspace2
+assign 	[class="(?i)chromium"]        $Workspace2
+#assign [class="jetbrains*"]          $Workspace3
+#assign [class="^jetbrains-studio$"]  $Workspace4
+assign [class="Telegram"]             $Workspace5
+assign [class="(?i)slack"]            $Workspace10
 
 # -----------------------------------------------------------------------------
 # Execution after parsing/setting up
