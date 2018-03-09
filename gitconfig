@@ -1,0 +1,5 @@
+[user]
+	email = danilocianfr@gmail.com
+	name = Danilo Cianfrone
+[core]
+	excludesfile = ~/.gitignore

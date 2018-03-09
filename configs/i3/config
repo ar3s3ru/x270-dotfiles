@@ -1,0 +1,218 @@
+# --------------------------------------------------------------------------- #
+#                                                                             #
+#                        i3 wm configuration - ar3s3ru                        #
+#                              For ThinkPad X270                              #
+#                                                                             #
+# --------------------------------------------------------------------------- #
+
+set $Font xos4 Terminus 8
+
+# Using Win key as modifier
+set $Mod  Mod4
+set $Term termite
+set $Menu exec rofi -show run -font "xos4 Terminus 12"
+set $SSH  exec rofi -show ssh -font "xos4 Terminus 12"
+
+set $Wallpaper ~/Pictures/wallpaper-japan-train.jpg
+set $Scripts   ~/.config/scripts
+
+# Gaps modifiers
+set $IGap 5
+set $EGap 5
+
+set $Exit exit
+
+# Workspaces
+set $Workspace1  "1: term"
+set $Workspace2  "2: www"
+set $Workspace3  "3: code"
+set $Workspace4  "4: ide"
+set $Workspace5  "5: chat"
+set $Workspace6  6
+set $Workspace7  7
+set $Workspace8  8
+set $Workspace9  9
+set $Workspace10 "10: slack"
+
+# Colors -------------------------------------------------------------
+# class                 border  backgr. text    indicator child_border
+client.focused          #ECB258 #ECB258 #ffffff #473F33   #ECB258
+client.focused_inactive #B0916C #B0916C #ffffff #635B51   #B0916C
+client.unfocused        #202636 #202636 #888888 #787F91   #202636
+client.urgent           #E12947 #E12947 #ffffff #A02338   #E12947
+client.placeholder      #FD713B #FD713B #ffffff #000000   #FD713B
+# --------------------------------------------------------------------
+
+# Setting font
+font pango:$Font
+
+# Use Mouse+$Mod to drag floating windows to their wanted position
+floating_Modifier $Mod
+
+# First bindings, vital
+bindsym $Mod+p       exec $Menu
+bindsym $Mod+Shift+p exec $SSH
+
+bindsym $Mod+Shift+q kill
+bindsym $Mod+Return  exec $Term
+
+# -----------------------------------------------------------------------------
+# Media keys
+# -----------------------------------------------------------------------------
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+bindsym XF86AudioMute        exec --no-startup-id amixer set Master toggle
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp   exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# Media player controls
+bindsym XF86AudioPlay  exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext  exec playerctl next
+bindsym XF86AudioPrev  exec playerctl previous
+
+# Print key
+bindsym Print      exec scrot
+bindsym $mod+Print exec scrot -s
+
+# -----------------------------------------------------------------------------
+# Real shit here
+# -----------------------------------------------------------------------------
+
+# Focus changing
+bindsym $Mod+Left  focus left
+bindsym $Mod+Down  focus down
+bindsym $Mod+Up    focus up
+bindsym $Mod+Right focus right
+
+# Move focused window
+bindsym $Mod+Shift+Left  move left
+bindsym $Mod+Shift+Down  move down
+bindsym $Mod+Shift+Up    move up
+bindsym $Mod+Shift+Right move right
+
+# Split in horizontal/vertical orientation
+bindsym $Mod+h split h
+bindsym $Mod+v split v
+
+# Enter fullscreen mode for focused window
+bindsym $Mod+f fullscreen toggle
+
+# Change layout container
+bindsym $Mod+s layout stacking
+bindsym $Mod+w layout tabbed
+bindsym $Mod+e layout toggle split
+
+# Go floating mode
+bindsym $Mod+Shift+space floating toggle
+
+# Change focus between tiling/floating windows
+bindsym $Mod+space focus Mode_toggle
+
+# Focus the parent container
+bindsym $Mod+a focus parent
+
+# Focus the child container
+bindsym $Mod+d focus child
+
+# Reload the configuration file
+bindsym $Mod+Shift+c reload
+
+# Restart i3 (preserving layout)
+bindsym $Mod+Shift+r restart
+
+# Exit i3
+bindsym $Mod+Shift+e $Exit
+
+# Mode resize
+Mode "resize" {
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return Mode "default"
+        bindsym Escape Mode "default"
+}
+
+bindsym $Mod+r Mode "resize"
+
+# -----------------------------------------------------------------------------
+# Windows configuration
+# -----------------------------------------------------------------------------
+
+# No titlebars, NO!
+for_window [class="^.*"] border pixel 3
+
+# Gaps
+gaps inner $IGap
+gaps outer $EGap
+
+# -----------------------------------------------------------------------------
+# Workspace configuration
+# -----------------------------------------------------------------------------
+
+# Switch to workspace
+bindsym $Mod+1 workspace $Workspace1
+bindsym $Mod+2 workspace $Workspace2
+bindsym $Mod+3 workspace $Workspace3
+bindsym $Mod+4 workspace $Workspace4
+bindsym $Mod+5 workspace $Workspace5
+bindsym $Mod+6 workspace $Workspace6
+bindsym $Mod+7 workspace $Workspace7
+bindsym $Mod+8 workspace $Workspace8
+bindsym $Mod+9 workspace $Workspace9
+bindsym $Mod+0 workspace $Workspace10
+
+# Move focused container to workspace
+bindsym $Mod+Shift+1 move container to workspace $Workspace1
+bindsym $Mod+Shift+2 move container to workspace $Workspace2
+bindsym $Mod+Shift+3 move container to workspace $Workspace3
+bindsym $Mod+Shift+4 move container to workspace $Workspace4
+bindsym $Mod+Shift+5 move container to workspace $Workspace5
+bindsym $Mod+Shift+6 move container to workspace $Workspace6
+bindsym $Mod+Shift+7 move container to workspace $Workspace7
+bindsym $Mod+Shift+8 move container to workspace $Workspace8
+bindsym $Mod+Shift+9 move container to workspace $Workspace9
+bindsym $Mod+Shift+0 move container to workspace $Workspace10
+
+# Assigning application to workspaces
+#assign [class="Termite"]		$Workspace1
+#assign [class="(?i)firefox"]		$Workspace2
+assign 	[class="(?i)chromium"]		$Workspace2
+#assign [class="jetbrains*"]  		$Workspace3
+#assign [class="^jetbrains-studio$"] 	$Workspace4
+assign [class="Telegram"]           	$Workspace5
+
+# -----------------------------------------------------------------------------
+# Execution after parsing/setting up
+# -----------------------------------------------------------------------------
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill $Wallpaper
+
+# Compositor
+exec --no-startup-id compton --config ~/.config/compton/config -b
+
+# NetworkManager applet
+exec --no-startup-id nm-applet
+
+# Auto lock
+exec --no-startup-id xset s 180 120
+#exec --no-startup-id xss-lock -n ~/.config/scripts/dim_screen.py -- i3lock -n
+exec --no-startup-id xss-lock -- i3lock -n
+
+# PCManFM daemon (for automounting)
+#exec --no-startup-id pcmanfm -d
+
+# Bar
+#exec --no-startup-id ~/.config/polybar/launch.sh
+
+bar {
+	status_command i3status
+}

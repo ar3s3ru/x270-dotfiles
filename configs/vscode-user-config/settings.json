@@ -1,0 +1,9 @@
+{
+    "editor.fontFamily": "'Terminus (TTF)'",
+    "editor.fontSize": 14,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "explorer.confirmDelete": false
+}

@@ -1,0 +1,5 @@
+# Exclude binaries
+bin/
+
+# Exclude vendored dependencies
+vendor/
