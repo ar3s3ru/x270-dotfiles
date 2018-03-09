@@ -5,7 +5,7 @@
 #                                                                             #
 # --------------------------------------------------------------------------- #
 
-set $Font xos4 Terminus 8
+set $Font xos4 Terminus 10
 
 # Using Win key as modifier
 set $Mod  Mod4
@@ -147,7 +147,7 @@ bindsym $Mod+r Mode "resize"
 # -----------------------------------------------------------------------------
 
 # No titlebars, NO!
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 # Gaps
 gaps inner $IGap

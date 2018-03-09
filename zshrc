@@ -39,7 +39,7 @@ DISABLE_AUTO_UPDATE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -81,6 +81,8 @@ export PATH=$GOBIN:$HOME/bin:/usr/local/bin:$PATH
 # else
 #   export EDITOR='mvim'
 # fi
+EDITOR=nvim
+BROWSER=chromium
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -105,6 +107,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
+source ~/.zsh_plugins.sh
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

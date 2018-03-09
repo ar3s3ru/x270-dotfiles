@@ -24,3 +24,6 @@ Steps for Arch Linux installation for Thinkpad X270
         ```bash
         # pip install neovim
         ```
+    * Added `/usr/bin/alsa_name.pl` script and `udev` rule for sound card usage
+      with ALSA
+        * Reference link [here](https://alsa.opensrc.org/Udev#Example_to_map_USB_Ports_to_ALSA_card_numbers_and_add_each_sound_card_to_a_combined.2C_single_interface_device)
