@@ -1,0 +1,69 @@
+[global/monitors]
+main     = eDP1
+external = HDMI1
+
+
+[global/colors]
+transparent = #00000000
+background  = #202636
+
+focused     = #ECB258
+visible     = ${background}
+unfocused   = ${background}
+urgent      = #E12847
+
+
+[global/fonts]
+font-0 = "xos4 Terminus:pixelsize=10;0"
+
+
+; Bars ----------------------------------------------------------------------- ;
+
+[bar/bottom]
+monitor = ${global/monitors.main}
+bottom  = true
+padding = 2
+
+font-0 = ${global/fonts.font-0}
+
+background = ${global/colors.transparent}
+
+modules-left   = i3
+modules-center = xwindow
+modules-right  = backlight date
+
+; Modules -------------------------------------------------------------------- ;
+
+[module/i3]
+type = internal/i3
+
+format         = <label-state> <label-mode>
+index-sort     = true
+pin-workspaces = true
+
+label-mode-padding    = 2
+label-mode-background = ${global/colors.background}
+
+label-focused-underline  = ${global/colors.focused}
+label-focused-padding    = 2
+
+
+[module/xwindow]
+type  = internal/xwindow
+label = %title:0:30...%
+
+
+[module/backlight]
+type = internal/xbacklight
+
+label-underline = #FFF
+
+
+[module/date]
+type     = internal/date
+interval = 1.0
+
+label = %date% %time%
+date  = "%Y-%m-%d"
+time  = "%H:%M:%S"
+
