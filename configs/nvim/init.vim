@@ -36,7 +36,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
-Plug 'scrooloose/nerdtree'
 
 " Vim only plugins
 if !has('nvim')

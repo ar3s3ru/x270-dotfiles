@@ -98,7 +98,8 @@ BROWSER=chromium
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
+
+#alias vim="nvim"
 alias top="htop"
 alias zshrc="vim ~/.zshrc"
 
@@ -107,7 +108,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-source ~/.zsh_plugins.sh
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh_plugins.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

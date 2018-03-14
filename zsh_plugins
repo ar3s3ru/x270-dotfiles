@@ -1,2 +1,9 @@
+# General plugins
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
+
+# Themes
+geometry-zsh/geometry
+# SShrike/enkel
+# denisinla/trajan-zsh-theme
+# halfo/lambda-mod-zsh-theme
