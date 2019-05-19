@@ -69,7 +69,8 @@ plugins=(
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$HOME/bin:/usr/local/bin:$PATH
+export GEMBIN="$HOME/.gem/ruby/2.5.0/bin"
+export PATH=$GEMBIN:$GOBIN:$HOME/bin:/usr/local/bin:$PATH
 
 
 # You may need to manually set your language environment
@@ -101,7 +102,11 @@ BROWSER=chromium
 
 #alias vim="nvim"
 alias top="htop"
-alias zshrc="vim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
+alias cat="bat"
+alias ping="prettyping --nolegend"
+
+alias hf="cd $GOPATH/src/github.com/hellofresh"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
@@ -110,5 +115,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_plugins.sh
+source ~/hellofresh_values.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(rbenv init -)"
+

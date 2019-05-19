@@ -767,3 +767,11 @@ au FileType yaml set expandtab
 au FileType yaml set shiftwidth=2
 au FileType yaml set softtabstop=2
 au FileType yaml set tabstop=2
+
+"----------------------------------------------
+" Language: TeX / LaTeX
+"----------------------------------------------
+au FileType tex set expandtab
+au FileType tex set shiftwidth=4
+au FileType tex set softtabstop=4
+au FileType tex set tabstop=4

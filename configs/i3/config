@@ -194,6 +194,9 @@ assign [class="(?i)slack"]            $Workspace10
 # Execution after parsing/setting up
 # -----------------------------------------------------------------------------
 
+# DPI config
+#exec --no-startup-id xrandr --dpi 220
+
 # Wallpaper
 exec --no-startup-id feh --bg-fill $Wallpaper
 
